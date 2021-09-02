@@ -1,1 +1,3 @@
-# assignment2-jogannagari
+# vinayaka reddy jogannagari
+## miami
+### beautiful beach and different type of cuisines.
