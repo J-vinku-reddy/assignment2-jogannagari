@@ -19,3 +19,13 @@
 * food
 
 **[LinktoAboutMe.md](AboutMe.md)**
+
+-----
+
+## Create food table
+> To create a table with at least 4food/drinksthat you would recommend someone try.Include a short paragraph that introduces the table.
+|mandatory     |fav1     |fav2     |fav3     |fav4     |
+| :-----:      | :-----: | :-----: | :-----: | :-----: |
+|food          |biryani  |pasta    |pizza    |pepsi    |
+|location      |hyderabad|vizag    |delhi    |chennai  |
+|amount        |50-40    |40-30    |30-20    |20-10    |
