@@ -30,3 +30,11 @@
 |food/drinks   |biryani  |pasta    |pizza    |pepsi    |
 |location      |hyderabad|vizag    |delhi    |chennai  |
 |amount        |50-40    |40-30    |30-20    |20-10    |
+
+-----
+
+## quotes by authors
+>"whatever you are, but be good one".
+Author: *valmiki* <br>
+>"The purpose of our lives is to be happy".
+Author: *parade* <br>
