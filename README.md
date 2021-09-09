@@ -42,30 +42,36 @@ Author: *parade* <br>
 -----
 
 ## Code Fencing
->In the mathematical discipline of graph theory, a matching or independent edge set in an undirected graph is a set of edges without common vertices. Finding a matching in a bipartite graph can be treated as a network flow problem. source code <https://en.wikipedia.org/wiki/Matching_(graph_theory)#Definitions>
+>In the mathematical discipline of graph theory, a matching or independent edge set in an undirected graph is a set of edges without common vertices. Finding a matching in a bipartite graph can be treated as a network flow problem. source code <https://en.wikipedia.org/wiki/Matching_(graph_theory)#Definitions
+int n, k;
+vector<vector<int>> g;
+vector<int> mt;
+vector<bool> used;
 
-int n;
-vector<vector<int>> adj;
-vector<int> side(n, -1);
-bool is_bipartite = true;
-queue<int> q;
-for (int st = 0; st < n; ++st) {
-    if (side[st] == -1) {
-        q.push(st);
-        side[st] = 0;
-        while (!q.empty()) {
-            int v = q.front();
-            q.pop();
-            for (int u : adj[v]) {
-                if (side[u] == -1) {
-                    side[u] = side[v] ^ 1;
-                    q.push(u);
-                } else {
-                    is_bipartite &= side[u] != side[v];
-                }
-            }
+bool try_kuhn(int v) {
+    if (used[v])
+        return false;
+    used[v] = true;
+    for (int to : g[v]) {
+        if (mt[to] == -1 || try_kuhn(mt[to])) {
+            mt[to] = v;
+            return true;
         }
     }
+    return false;
 }
 
-quick source code<https://cp-algorithms.com/graph/bipartite-check.html>
+int main() {
+    //... reading the graph ...
+
+    mt.assign(k, -1);
+    for (int v = 0; v < n; ++v) {
+        used.assign(n, false);
+        try_kuhn(v);
+    }
+
+    for (int i = 0; i < k; ++i)
+        if (mt[i] != -1)
+            printf("%d %d\n", mt[i] + 1, i + 1);
+}
+quick source code<https://cp-algorithms.com/graph/kuhn_maximum_bipartite_matching.html>
