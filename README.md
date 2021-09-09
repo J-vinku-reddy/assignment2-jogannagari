@@ -46,7 +46,6 @@ Author: *parade* <br>
 
 int n;
 vector<vector<int>> adj;
-
 vector<int> side(n, -1);
 bool is_bipartite = true;
 queue<int> q;
