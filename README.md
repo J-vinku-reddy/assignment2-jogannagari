@@ -69,6 +69,4 @@ for (int st = 0; st < n; ++st) {
     }
 }
 
-cout << (is_bipartite ? "YES" : "NO") << endl;
-
 quick source code<https://cp-algorithms.com/graph/bipartite-check.html>
