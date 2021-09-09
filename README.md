@@ -38,3 +38,37 @@
 Author: *valmiki* <br>
 >"The purpose of our lives is to be happy".
 Author: *parade* <br>
+
+-----
+
+## Code Fencing
+>In the mathematical discipline of graph theory, a matching or independent edge set in an undirected graph is a set of edges without common vertices. Finding a matching in a bipartite graph can be treated as a network flow problem. source code <https://en.wikipedia.org/wiki/Matching_(graph_theory)#Definitions>
+
+int n;
+vector<vector<int>> adj;
+
+vector<int> side(n, -1);
+bool is_bipartite = true;
+queue<int> q;
+for (int st = 0; st < n; ++st) {
+    if (side[st] == -1) {
+        q.push(st);
+        side[st] = 0;
+        while (!q.empty()) {
+            int v = q.front();
+            q.pop();
+            for (int u : adj[v]) {
+                if (side[u] == -1) {
+                    side[u] = side[v] ^ 1;
+                    q.push(u);
+                } else {
+                    is_bipartite &= side[u] != side[v];
+                }
+            }
+        }
+    }
+}
+
+cout << (is_bipartite ? "YES" : "NO") << endl;
+
+quick source code<https://cp-algorithms.com/graph/bipartite-check.html>
